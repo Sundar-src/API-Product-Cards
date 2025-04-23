@@ -4,7 +4,7 @@ A simple web project that fetches product data from the DummyJSON API and displa
 ## 🔧 Features:
 * Fetches product data using the fetch() API
 
-* Renders all products in a responsive UI
+* Renders all products using Map() method
 
 * Includes product image, title, description, and price
 
