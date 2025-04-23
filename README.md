@@ -13,6 +13,6 @@ A simple web project that fetches product data from the DummyJSON API and displa
 ## 🚀 Tech Stack:
 * `HTML`
 * `CSS`
-* `JavaScript`
+* `JavaScript(Vanilla)`
 
 
