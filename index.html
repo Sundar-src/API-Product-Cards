@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image Carousel</title>
+  <style>
+    * {
+      margin: 0%;
+      padding: 0%;
+      list-style: none;
+    }
+
+    .container {
+      border: 2px solid rgb(128, 185, 178);
+      padding: 10px;
+      width: 300px;
+      height: 400px;
+      margin: 20px;
+      border-radius: 5%;
+      box-shadow: 4px 4px rgb(128, 185, 178);
+      text-align: center;
+    }
+
+    .img {
+      width: 100%;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 8px;
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    h2 {
+      color: rgb(8, 67, 67);
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      margin-bottom: 15px;
+    }
+
+    .para {
+      font-family: Arial, Helvetica, sans-serif;
+      color: gray;
+      font-size: small;
+    }
+
+    .price {
+      font-size: large;
+      margin-top: 15px;
+      border: 2px solid teal;
+      display: inline-block;
+      padding: 10px;
+      border-radius: 10px;
+      background-color: teal;
+      color: white;
+    }
+
+    .price:hover {
+      background-color: rgb(68, 164, 164);
+      border: 2px solid rgb(68, 169, 164);
+    }
+  </style>
+</head>
+
+<body>
+
+  <main id="heroSection">
+  </main>
+
+  <script>
+    fetch('https://dummyjson.com/products'
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        let products = data.products
+        console.log(products)
+        const card = products.map((product) =>
+          ` <div class="container" id="mainDiv">
+            <img src="${product.images[0]}" alt="" id="image" class="img">
+      <h2 id="heading">${product.title}</h2>
+      <p id="description" class="para">${product.description}</p>
+      <p class="price"><strong>Price:</strong> $${product.price}</p>
+      </div>`
+        ).join('');
+        let container = document.querySelector("#heroSection");
+        container.innerHTML = card
+      })
+      .catch((error) => console.log("you are facing network error", error))
+  </script>
+
+</body>
+
+</html>
