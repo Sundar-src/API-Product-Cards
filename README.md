@@ -16,7 +16,7 @@ A simple web project that fetches product data from the DummyJSON API and displa
 * `JavaScript(Vanilla)`
 
    ## 📷 Preview:
-![Card Slider Preview](./Assets/screenshot.png)
+![Card Slider Preview](./screenshot.png)
 
 
 
